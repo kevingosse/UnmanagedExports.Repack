@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28516.95
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGiesecke.DllExport", "RGiesecke.DllExport\RGiesecke.DllExport.csproj", "{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGiesecke.DllExport.MSBuild", "RGiesecke.DllExport.MSBuild\RGiesecke.DllExport.MSBuild.csproj", "{AF861B2B-C0B8-4472-AF1A-D59B1030588B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF861B2B-C0B8-4472-AF1A-D59B1030588B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF861B2B-C0B8-4472-AF1A-D59B1030588B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF861B2B-C0B8-4472-AF1A-D59B1030588B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF861B2B-C0B8-4472-AF1A-D59B1030588B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9196C8C2-CE57-4FD6-BB43-87CED273D8B4}
+	EndGlobalSection
+EndGlobal
