@@ -551,35 +551,35 @@ namespace RGiesecke.DllExport.MSBuild
                }
            });
             return (Func<Version, string, string>)((version, toolName) =>
-           {
-               int num;
+            {
+                var names = Enum.GetNames(targetDotNetFrameworkVersionType);
 
-               try
-               {
-                   num = (int)Enum.Parse(targetDotNetFrameworkVersionType, "Latest");
-               }
-               catch (Exception)
-               {
-                   num = (int)Enum.Parse(targetDotNetFrameworkVersionType, "VersionLatest");
-               }
+                string enumLabel = "Latest";
 
-               string path;
-               for (path = getToolPath(toolName, num); path == null; path = getToolPath(toolName, num))
-               {
-                   ++num;
-                   if (!Enum.IsDefined(targetDotNetFrameworkVersionType, (object)num))
-                       return (string)null;
-               }
-               for (; path != null && !File.Exists(path); path = getToolPath(toolName, num))
-               {
-                   --num;
-                   if (!Enum.IsDefined(targetDotNetFrameworkVersionType, (object)num))
-                       return (string)null;
-               }
-               if (path != null && !File.Exists(path))
-                   return (string)null;
-               return path;
-           });
+                if (!names.Contains(enumLabel))
+                {
+                    enumLabel = "VersionLatest";
+                }
+
+                int num = (int)Enum.Parse(targetDotNetFrameworkVersionType, enumLabel);
+
+                string path;
+                for (path = getToolPath(toolName, num); path == null; path = getToolPath(toolName, num))
+                {
+                    ++num;
+                    if (!Enum.IsDefined(targetDotNetFrameworkVersionType, (object)num))
+                        return (string)null;
+                }
+                for (; path != null && !File.Exists(path); path = getToolPath(toolName, num))
+                {
+                    --num;
+                    if (!Enum.IsDefined(targetDotNetFrameworkVersionType, (object)num))
+                        return (string)null;
+                }
+                if (path != null && !File.Exists(path))
+                    return (string)null;
+                return path;
+            });
         }
 
         protected Type GetToolLocationHelperTypeFromRegsitry()
