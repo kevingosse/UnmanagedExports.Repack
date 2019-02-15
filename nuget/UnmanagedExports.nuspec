@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata minClientVersion="4.0">
     <id>UnmanagedExports.Repack</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>Unmanaged Exports (DllExport for .Net) - Adapted for PackageReference</title>
     <authors>Robert Giesecke, repacked by Kevin Gosse</authors>
     <owners>Kevin Gosse</owners>
