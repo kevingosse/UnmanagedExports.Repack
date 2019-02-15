@@ -334,7 +334,7 @@ namespace RGiesecke.DllExport.Parsing
                             {
                                 notifier.Notify(-2, toolLoggingCode, Resources.R_0_1_returned_gracefully, (object) withoutExtension, (object) exePath);
                                 int exitCode = process.ExitCode;
-                                if (exitCode != 0 || stringBuilder2.Length > 0)
+                                if (exitCode != 0)
                                     throw new InvalidOperationException((stringBuilder2.Length > 0 ? (object) stringBuilder2 : (object) stringBuilder1).ToString());
                                 if (stringBuilder2.Length > 0)
                                     notifier.Notify(-3, verboseLoggingCode, stringBuilder2.ToString());
