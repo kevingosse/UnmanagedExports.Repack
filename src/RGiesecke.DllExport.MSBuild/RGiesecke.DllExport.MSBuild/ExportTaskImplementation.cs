@@ -136,6 +136,7 @@ namespace RGiesecke.DllExport.MSBuild
             }
         }
 
+        public string TargetFramework { get; set; }
         public string TargetFrameworkVersion { get; set; }
 
         public bool? SkipOnAnyCpu { get; set; }
@@ -506,7 +507,20 @@ namespace RGiesecke.DllExport.MSBuild
 
         private Func<Version, string, string> GetGetToolPathInternal(string methodName)
         {
-            Type type = this.GetToolLocationHelperTypeFromRegsitry();
+            Type type = null;
+
+            var buildUtilities = Assembly.Load("Microsoft.Build.Utilities.Core");
+
+            if (buildUtilities != null)
+            {
+                type = buildUtilities.GetType("Microsoft.Build.Utilities.ToolLocationHelper");
+            }
+
+            if (type == null)
+            {
+                type = this.GetToolLocationHelperTypeFromRegsitry();
+            }
+
             if (type == null)
             {
                 type = Type.GetType("Microsoft.Build.Utilities.ToolLocationHelper") ?? Type.GetType("Microsoft.Build.Utilities.ToolLocationHelper, Microsoft.Build.Utilities.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
